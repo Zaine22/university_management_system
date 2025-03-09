@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester");
+
+body {
+  margin: auto auto;
+  padding: 20px 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 595px;
+  height: 842px; /* A4 size */
+  /* Optional: If you want a background for the whole body */
+}
+
+.pm-certificate-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  font-family: "Open Sans", sans-serif;
+  z-index: 999;
+  background-image: url("./certificate.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pm-certificate-border {
+  position: relative;
+  width: 90%; /* Ensures some padding from the border */
+  height: 90%; /* Ensures some padding from the border */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden; /* Prevent content from spilling over */
+  transform: translate(0%, 0%); /* Keep it centered */
+  box-sizing: border-box;
+}
+
+.pm-certificate-header {
+  margin-bottom: 20px;
+  margin-top: 150px;
+  font-family: "Bookman Old Style", serif;
+}
+
+.pm-certificate-title h2 {
+  font-size: 20px;
+  color: #333;
+  letter-spacing: 2px;
+  font-weight: 999;
+  font-family: "Bookman Old Style", serif;
+}
+
+.pm-certificate-header span{
+  font-size: 12px;
+  font-family: "Bell MT", serif;
+}
+
+.pm-certificate-header h2 {
+  font-family: "Bell MT", serif;
+  font-weight: 666;
+}
+.pm-certificate-body {
+  color: #333;
+  font-size: 16px; /* Adjust font size to fit within the border */
+  line-height: 1.5; /* Ensure proper line spacing */
+}
+
+.pm-name-text {
+  font-family: "Bell MT",serif;
+  margin-bottom: 15px;
+  font-weight:510;
+}
+
+.section-text {
+  margin-top: 40px;
+  font-family: "Aparajita",serif;
+}

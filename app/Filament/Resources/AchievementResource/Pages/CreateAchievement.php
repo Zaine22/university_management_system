@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Filament\Resources\AchievementResource\Pages;
+
+use App\Filament\Resources\AchievementResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreateAchievement extends CreateRecord
+{
+    protected static string $resource = AchievementResource::class;
+
+    protected function afterCreate()
+    {
+        $this->record->update([
+            'certificateID' => $this->record->generateUniqueCertificateId(),
+        ]);
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
+    }
+}

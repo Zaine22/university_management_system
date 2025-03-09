@@ -1,0 +1,67 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  laravel-deployment:
+
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+      with:
+        php-version: '8.2'
+    - uses: actions/checkout@v4
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      
+    - name: List files before FTP upload
+      run: ls -R
+    
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_COLLEGE_BACKEND_SERVER }}
+        username: ${{ secrets.FTP_COLLEGE_BACKEND_USER }}
+        password: ${{ secrets.FTP_COLLEGE_BACKEND_PASS }}
+        port: ${{ secrets.FTP_COLLEGE_BACKEND_PORT }}
+        # server-dir: /home/riinstit/dashboard.ri-institute.com/
+        debug: true
+        exclude: |
+          # vendor/phpunit/php-code-coverage/**
+          # .git/**
+          # node_modules/**
+          # tests/**
+          # vendor/**/.github
+          # vendor/**/*.xml
+          # vendor/**/*.neon
+          # vendor/**/results.sarif
+          # vendor/**/.editorconfig
+          # vendor/**/.gitignore
+          # vendor/**/.php-cs-fixer.*
+          vendor/phpunit/php-code-coverage/**
+          .git/**
+          node_modules/**
+          tests/**
+          vendor/**/.github
+          vendor/**/ISSUE_TEMPLATE
+          vendor/**/*.xml
+          vendor/**/*.neon
+          vendor/**/results.sarif
+          vendor/**/.editorconfig
+          vendor/**/.gitignore
+          vendor/**/.php-cs-fixer.*
+          vendor/**/.github/**
+          vendor/danharrin/livewire-rate-limiting/.github/**
+          vendor/danharrin/livewire-rate-limiting.github/ISSUE_TEMPLATE/**
+          vendor/danharrin/livewire-rate-limiting/tests/**
+          vendor/doctrine/deprecations/lib/**
+        state-name: ftp-deploy.state.json
+        dry-run: false
+        
