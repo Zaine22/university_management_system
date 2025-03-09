@@ -133,10 +133,10 @@
     <div class="container">
         <div class="header">
             <div class="header-left">
-                <img src="{{ asset('/images/RILOGO.png') }}" alt="">
+                <img src="{{ asset('/images/Example.png') }}" alt="">
             </div>
             <div class="header-center">
-                <h1>RI INSTITUTE</h1>
+                <h1>Example</h1>
                 <p>Office: No.5, Yuzana Street, Mingalar Taung Nyunt, Tamwe Township, Yangon.</p>
                 <p>Phone: 09964051332, 09262620754</p>
             </div>
@@ -376,13 +376,13 @@
                 <tr>
                     <td class="logo">
                         <img
-                            src="{{ asset("/images/RILOGO.png") }}"
+                            src="{{ asset("/images/Example.png") }}"
                             alt=""
                             style="max-width: 50%;"
                         >
                     </td>
                     <td class="center-content">
-                        <h1>RI INSTITUTE</h1>
+                        <h1>Example</h1>
                         <p>Office: No.5, Yuzana Street, Mingalar Taung Nyunt, Tamwe Township, Yangon.</p>
                         <p>Phone: 09964051332, 09262620754</p>
                     </td>

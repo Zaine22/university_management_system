@@ -65,7 +65,7 @@
 
     <body>
         <div class="logo-container">
-            <img src="{{ asset("assets/images/RILOGO.png") }}">
+            <img src="{{ asset("assets/images/Example.png") }}">
         </div>
 
         <div class="container">
@@ -79,7 +79,7 @@
                     <a href="">Learn More</a>
                 </button>
 
-                <p>Thank you, <br> RI Institute</p>
+                <p>Thank you, <br> Example</p>
             </div>
 
             <div>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="footer-container">
-            <p>RI INSTITUTE. all rights reserved.</p>
+            <p>Example. all rights reserved.</p>
         </div>
     </body>
 

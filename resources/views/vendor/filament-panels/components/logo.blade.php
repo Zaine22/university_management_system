@@ -4,5 +4,5 @@
         alt="Logo"
         class="h-11"
     >
-    <h2 class="font-bold mx-3">RI Institute</h2>
+    <h2 class="font-bold mx-3">Example</h2>
 </div>
